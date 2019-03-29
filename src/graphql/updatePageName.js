@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const updatePageName = gql`
+export const updatePageNameMutation = gql`
   mutation updatePageName($name: String!) {
     updatePageName(name: $name) @client {
       currentPageName
