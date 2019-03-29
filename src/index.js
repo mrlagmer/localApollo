@@ -1,8 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './pages/App';
+import App from "./pages/App";
 
-ReactDOM.render(
-   <App />, document.getElementById('root')
+import { ApolloProvider } from "react-apollo";
+import { client } from "./apollo";
+
+const WrappedApp = (
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
 );
+
+ReactDOM.render(WrappedApp, document.getElementById("root"));
+// Don’t be a sap. Wrap your app.
